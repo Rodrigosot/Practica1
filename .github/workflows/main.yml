@@ -26,8 +26,9 @@ jobs:
     - name: Analizar código con SonarCloud
       uses: sonarsource/sonarqube-scan-action@v5.0.0
       with:
-        sonar-project-key: 'Rodrigosot_Practica1'
-        sonar-project-name: 'Practica1'
-        sonar-host-url: 'https://sonarcloud.io'
+        args: >
+          -Dsonar.projectKey=Rodrigosot_Practica1
+          -Dsonar.organization=rodrigosot
+          -Dsonar.host.url=https://sonarcloud.io
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
