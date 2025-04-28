@@ -24,8 +24,10 @@ jobs:
       run: npm test
 
     - name: Analizar código con SonarCloud
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: sonarsource/sonarqube-scan-action@v5.0.0
       with:
-        projectBaseDir: .
+        sonar-project-key: 'Rodrigosot_Practica1'
+        sonar-project-name: 'Practica1'
+        sonar-host-url: 'https://sonarcloud.io'
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
